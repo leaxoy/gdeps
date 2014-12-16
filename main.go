@@ -11,8 +11,7 @@ import "fmt"
 // import "path"
 // import "net/http"
 
-const (
-	Usage = `
+const Usage = `
 This is a go package manage tool.
 
 Usage:
@@ -30,8 +29,7 @@ Options:
 	--version  		show version of current.	
 `
 
-	Version = `Version: gpm 0.0.1`
-)
+const Version = `Version: gpm 0.0.1`
 
 func main() {
 	// args, _ := docopt.Parse(Usage, nil, true, Version, false)
