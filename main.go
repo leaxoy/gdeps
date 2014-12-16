@@ -42,39 +42,3 @@ func main() {
 		println("No packages find in godoc.org.")
 	}
 }
-
-// func read(s string) (*os.File, error) {
-// 	_, err := os.Stat(s)
-// 	if err != nil {
-// 		return nil, errors.New("package.json not exist.please check or modify it.")
-// 	}
-// 	file, err := os.Open(s)
-// 	if err != nil {
-// 		return nil, err
-// 	}
-// 	return file, nil
-// }
-
-// func parse() map[string]interface{} {
-// 	s := path.Join(dir(), "package.json")
-// 	f, err := read(s)
-// 	if err != nil {
-// 		fmt.Println(fmt.Sprintf("\033[32m%s", "can't find package.json file, please modify it."))
-// 		return nil
-// 	}
-// 	var args Arguments
-// 	result := make(map[string]interface{})
-// 	json.NewDecoder(f).Decode(&args)
-// 	for _, arg := range args.Arg {
-// 		result[arg.key] = arg.val
-// 	}
-// 	return result
-// }
-
-// func dir() string {
-// 	dir, err := os.Getwd()
-// 	if err != nil {
-// 		return ""
-// 	}
-// 	return dir
-// }
