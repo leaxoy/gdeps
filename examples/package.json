@@ -1,0 +1,12 @@
+{
+	"name":"app",
+	"version":"0.0.1",
+	"author": "李晓辉",
+	"email":"727615480@qq.com",
+	"homepage":"example.com",
+	"dependencies":[
+		"github.com/astaxie/beego",
+		"github.com/go-sql-driver/mysql",
+		"gopkg.in/mgo.v2"
+	]
+}

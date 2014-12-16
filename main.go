@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-// import "os"
+import "os"
+
 // import "os/exec"
 // import "github.com/tj/go-search"
 // import "github.com/tj/docopt"
@@ -34,7 +35,16 @@ const Version = `Version: gpm 0.0.1`
 func main() {
 	// args, _ := docopt.Parse(Usage, nil, true, Version, false)
 	// println(args)
-	res := search("github.com/tj/docpt")
+	args := os.Args
+	if len(args) > 1 && args[1] == `install` {
+		err := installAll()
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		fmt.Println("install all packages")
+	}
+	res := search("github.com/tj/docopt")
 	if len(res) == 0 {
 		fmt.Sprintf("\033[31m")
 		println("No packages find in godoc.org.")

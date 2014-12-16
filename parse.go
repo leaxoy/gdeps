@@ -15,16 +15,16 @@ type Request struct {
 
 type Dependencies []string
 
-func parse() Request {
+func parse() (interface{}, error) {
 	pwd, _ := os.Getwd()
 	var req Request
-	pj := path.Join(pwd, "")
+	pj := path.Join(pwd, "package.json")
 	file := read(pj)
 	err := json.NewDecoder(file).Decode(&req)
 	if err != nil {
-		return req
+		return nil, err
 	}
-	return req
+	return req, nil
 }
 
 func read(s string) *os.File {
